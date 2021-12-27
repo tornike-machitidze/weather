@@ -4,9 +4,7 @@ const forec = document.querySelector(".forcast");
 
 const foarcastData = async (address) => {
   try {
-    const response = await fetch(
-      `http://localhost:3000/weather?address=${address}`
-    );
+    const response = await fetch(`/weather?address=${address}`);
     const { forecast, location } = await response.json();
     if (forecast && location) {
       loc.textContent = location;
